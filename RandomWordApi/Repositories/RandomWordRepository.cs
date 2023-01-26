@@ -5,6 +5,7 @@ namespace RandomWordApi;
 public class RandomWordRepository 
 {
     private DataService DataService;
+    
     Random randomNumber = new Random();
 
     public RandomWordRepository(DataService dataService) 
