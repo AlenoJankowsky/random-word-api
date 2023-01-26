@@ -4,24 +4,29 @@ using RandomWordApi.Service;
 namespace RandomWordApi.Controllers;
 
 [ApiController]
-public class RandomWordController : ControllerBase {
+public class RandomWordController : ControllerBase 
+{
     private RandomWordService RandomWordService;
-    public RandomWordController(RandomWordService RandomWordService) {
+    public RandomWordController(RandomWordService RandomWordService) 
+    {
         this.RandomWordService = RandomWordService;
     }
 
     [HttpGet("randomword")]
-    public string[]? GetWord(int amountOfWords) {
+    public string[]? GetWord(int amountOfWords) 
+    {
         return RandomWordService.GetWord(amountOfWords);
     }
     
     [HttpGet("randomwords")]
-    public string[]? GetAllWords() {
+    public string[]? GetAllWords() 
+    {
         return RandomWordService.GetAllWords();
     }
 
     [HttpPost("randomword")]
-    public string? CreateWord(string word) {
+    public string? CreateWord(string word) 
+    {
         return RandomWordService.CreateWord(word);
     }
 }
