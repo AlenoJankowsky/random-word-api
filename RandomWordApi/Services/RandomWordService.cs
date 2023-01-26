@@ -9,17 +9,17 @@ public class RandomWordService
         this.randomWordRepository = randomWordRepository;
     }
 
-    public string[]? GetWord(int amountOfWords) 
+    public string[] GetWord(int amountOfWords) 
     {
         return randomWordRepository.GetWord(amountOfWords);
     }
 
-    public string[]? GetAllWords() 
+    public string[] GetAllWords() 
     {
         return randomWordRepository.GetAllWords();
     }
 
-    public string? CreateWord(string word) 
+    public string CreateWord(string word) 
     {
         return randomWordRepository.CreateWord(word);
     }

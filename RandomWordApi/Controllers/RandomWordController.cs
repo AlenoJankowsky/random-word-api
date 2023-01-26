@@ -13,19 +13,19 @@ public class RandomWordController : ControllerBase
     }
 
     [HttpGet("randomword")]
-    public string[]? GetWord(int amountOfWords) 
+    public string[] GetWord(int amountOfWords) 
     {
         return RandomWordService.GetWord(amountOfWords);
     }
     
     [HttpGet("randomwords")]
-    public string[]? GetAllWords() 
+    public string[] GetAllWords() 
     {
         return RandomWordService.GetAllWords();
     }
 
     [HttpPost("randomword")]
-    public string? CreateWord(string word) 
+    public string CreateWord(string word) 
     {
         return RandomWordService.CreateWord(word);
     }

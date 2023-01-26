@@ -5,7 +5,7 @@ namespace RandomWordApi;
 public class RandomWordRepository 
 {
     private DataService DataService;
-    
+
     Random randomNumber = new Random();
 
     public RandomWordRepository(DataService dataService) 
@@ -13,7 +13,7 @@ public class RandomWordRepository
         this.DataService = dataService;
     }
 
-    public string[]? GetWord(int amountOfWords) 
+    public string[] GetWord(int amountOfWords) 
     {
         string[]? listOfWantedWords = new string[amountOfWords]; 
         for (int iterationCounter = 0; iterationCounter < amountOfWords; iterationCounter++) 
@@ -24,12 +24,12 @@ public class RandomWordRepository
         return listOfWantedWords;
     }
 
-    public string[]? GetAllWords() 
+    public string[] GetAllWords() 
     {
         return this.DataService.randomWords.ToArray();
     }
 
-    public string? CreateWord(string word) 
+    public string CreateWord(string word) 
     {
         this.DataService.randomWords.Add(word);
 
