@@ -5,23 +5,23 @@ namespace RandomWordApi.Controllers;
 
 [ApiController]
 public class RandomWordController : ControllerBase {
-    private RandomWordService randomWordService;
-    public RandomWordController(RandomWordService randomWordService) {
-        this.randomWordService = randomWordService;
+    private RandomWordService RandomWordService;
+    public RandomWordController(RandomWordService RandomWordService) {
+        this.RandomWordService = RandomWordService;
     }
 
     [HttpGet("randomword")]
     public string[]? GetWord(int amountOfWords) {
-        return randomWordService.GetWord(amountOfWords);
+        return RandomWordService.GetWord(amountOfWords);
     }
     
     [HttpGet("randomwords")]
     public string[]? GetAllWords() {
-        return randomWordService.GetAllWords();
+        return RandomWordService.GetAllWords();
     }
 
     [HttpPost("randomword")]
     public string? CreateWord(string word) {
-        return randomWordService.CreateWord(word);
+        return RandomWordService.CreateWord(word);
     }
 }
