@@ -3,7 +3,6 @@ using RandomWordApi.Service;
 
 namespace RandomWordApi.Controllers;
 
-[Route(template:"")]
 [ApiController]
 public class RandomWordController : ControllerBase {
     private RandomWordService randomWordService;
@@ -11,17 +10,17 @@ public class RandomWordController : ControllerBase {
         this.randomWordService = randomWordService;
     }
 
-    [HttpGet(template:"GetWord")]
+    [HttpGet("randomword")]
     public string[]? GetWord(int amountOfWords) {
         return randomWordService.GetWord(amountOfWords);
     }
     
-    [HttpGet(template:"GetAllWords")]
+    [HttpGet("randomwords")]
     public string[]? GetAllWords() {
         return randomWordService.GetAllWords();
     }
 
-    [HttpPost(template:"CreateWord")]
+    [HttpPost("randomword")]
     public string? CreateWord(string word) {
         return randomWordService.CreateWord(word);
     }
